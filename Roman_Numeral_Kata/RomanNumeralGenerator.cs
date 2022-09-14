@@ -3,7 +3,7 @@
     public class RomanNumeralGenerator
     {
 
-        private readonly Dictionary<int, string> arabicToRomanDictionary = 
+        private readonly Dictionary<int, string> arabicToRomanDictionary =
             new Dictionary<int, string>
         {
             { 1000, "M" },
@@ -22,18 +22,17 @@
 
         public string FromArabic(int iArabicNumber)
         {
-            string romanNumeral = string.Empty;
+            var romanValue = GetRomanValueFor(iArabicNumber);
 
-            foreach (KeyValuePair<int, string> entry in arabicToRomanDictionary)
-            {
-                while (entry.Key <= iArabicNumber)
-                {
-                    iArabicNumber -= entry.Key;
-                    romanNumeral += entry.Value;
-                }
-            }
+            if (romanValue.Equals(default(KeyValuePair<int, string>))) return string.Empty;
 
-            return romanNumeral;
+            return $"{romanValue.Value}{FromArabic(iArabicNumber -= romanValue.Key)}";
+        }
+
+        private KeyValuePair<int, string> GetRomanValueFor(int arabicNumber)
+        {
+            return arabicToRomanDictionary.OrderByDescending(x => x.Key)
+                                          .FirstOrDefault(x => x.Key <= arabicNumber)
         }
     }
 }
