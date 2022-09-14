@@ -32,7 +32,7 @@
         private KeyValuePair<int, string> GetRomanValueFor(int arabicNumber)
         {
             return arabicToRomanDictionary.OrderByDescending(x => x.Key)
-                                          .FirstOrDefault(x => x.Key <= arabicNumber)
+                .FirstOrDefault(x => x.Key <= arabicNumber);
         }
     }
 }
