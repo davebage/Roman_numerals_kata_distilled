@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3c60959a-f642-492f-b12b-ca57cfe116a8": {
+      "ProjectGuid": "3c60959a-f642-492f-b12b-ca57cfe116a8",
+      "DisplayName": "Roman_Numeral_Kata",
+      "ColorIndex": 0
+    },
+    "3a1074d3-6067-4cce-adc5-b5f22eb36e0f": {
+      "ProjectGuid": "3a1074d3-6067-4cce-adc5-b5f22eb36e0f",
+      "DisplayName": "Roman_Numeral_Generator_Should",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
